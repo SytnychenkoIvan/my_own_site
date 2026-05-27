@@ -1,0 +1,46 @@
+.footer {
+		background-color: #0c0f0f;
+		// .footer__container
+
+		&__container {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: rem(50) rem(25);
+		}
+
+		// .footer__logo
+
+		&__logo {
+			font-family: "JetBrainsMono";
+			@include adaptiveValue("font-size", 20, 20);
+			color: $greenColor;
+		}
+
+		// .footer__text
+
+		&__text {
+			color: $greyColor;
+			font-size: rem(14);
+		}
+
+		// .footer__socials
+
+		&__socials {
+			display: flex;
+			gap: rem(20);           
+		}
+		&__social-link{
+			transition: all 0.3s ease 0s;
+			font-family: "JetBrainsMono";
+			color: $greyColor;
+			font-size: rem(16);
+			@media (any-hover: hover){
+				&:hover{
+					color: $greenColor;
+				}
+			}
+			
+		}
+		
+}
