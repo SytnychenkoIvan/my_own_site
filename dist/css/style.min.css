@@ -379,6 +379,13 @@ body._lock {
   justify-content: space-between;
   padding: 3.125rem 1.5625rem;
 }
+@media (max-width: 47.99875em) {
+  .footer__container {
+    flex-direction: column;
+    row-gap: 0.9375rem;
+    padding: 1.5625rem 0.9375rem;
+  }
+}
 .footer__logo {
   font-family: "JetBrainsMono";
 }
@@ -388,20 +395,20 @@ body._lock {
   }
 }
 @media (min-width: 20em) and (max-width: 77.5em) {
-  @supports (font-size: clamp( 1.25rem , 1.25rem  +  0vw , 1.25rem )) {
+  @supports (font-size: clamp( 0.9375rem , 0.8288043478rem  +  0.5434782609vw , 1.25rem )) {
     .footer__logo {
-      font-size: clamp( 1.25rem , 1.25rem  +  0vw , 1.25rem );
+      font-size: clamp( 0.9375rem , 0.8288043478rem  +  0.5434782609vw , 1.25rem );
     }
   }
-  @supports not (font-size: clamp( 1.25rem , 1.25rem  +  0vw , 1.25rem )) {
+  @supports not (font-size: clamp( 0.9375rem , 0.8288043478rem  +  0.5434782609vw , 1.25rem )) {
     .footer__logo {
-      font-size: calc(1.25rem + 0 * (100vw - 20rem) / 57.5);
+      font-size: calc(0.9375rem + 0.3125 * (100vw - 20rem) / 57.5);
     }
   }
 }
 @media (max-width: 20em) {
   .footer__logo {
-    font-size: 1.25rem;
+    font-size: 0.9375rem;
   }
 }
 .footer__logo {
@@ -409,7 +416,28 @@ body._lock {
 }
 .footer__text {
   color: #636262;
-  font-size: 0.875rem;
+}
+@media (min-width: 77.5em) {
+  .footer__text {
+    font-size: 0.875rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 77.5em) {
+  @supports (font-size: clamp( 0.625rem , 0.5380434783rem  +  0.4347826087vw , 0.875rem )) {
+    .footer__text {
+      font-size: clamp( 0.625rem , 0.5380434783rem  +  0.4347826087vw , 0.875rem );
+    }
+  }
+  @supports not (font-size: clamp( 0.625rem , 0.5380434783rem  +  0.4347826087vw , 0.875rem )) {
+    .footer__text {
+      font-size: calc(0.625rem + 0.25 * (100vw - 20rem) / 57.5);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .footer__text {
+    font-size: 0.625rem;
+  }
 }
 .footer__socials {
   display: flex;
@@ -420,6 +448,28 @@ body._lock {
   font-family: "JetBrainsMono";
   color: #636262;
   font-size: 1rem;
+}
+@media (min-width: 77.5em) {
+  .footer__social-link {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 77.5em) {
+  @supports (font-size: clamp( 0.75rem , 0.6630434783rem  +  0.4347826087vw , 1rem )) {
+    .footer__social-link {
+      font-size: clamp( 0.75rem , 0.6630434783rem  +  0.4347826087vw , 1rem );
+    }
+  }
+  @supports not (font-size: clamp( 0.75rem , 0.6630434783rem  +  0.4347826087vw , 1rem )) {
+    .footer__social-link {
+      font-size: calc(0.75rem + 0.25 * (100vw - 20rem) / 57.5);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .footer__social-link {
+    font-size: 0.75rem;
+  }
 }
 @media (any-hover: hover) {
   .footer__social-link:hover {
