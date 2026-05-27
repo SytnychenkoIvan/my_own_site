@@ -134,7 +134,7 @@ body._lock {
 }
 
 .header {
-  background-color: #121414;
+  background-color: #0c0f0f;
   position: fixed;
   top: 0;
   left: 0;
@@ -463,6 +463,85 @@ body._lock {
   display: none !important;
 }
 
+.main {
+  background-color: #121414;
+}
+
+.main__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main__container {
+  position: relative;
+}
+
+.main__bg-decor {
+  content: "";
+  position: absolute;
+  height: 100%;
+  top: -120px;
+  right: 0;
+}
+
+.main__bg-decor-bottom {
+  content: "";
+  position: absolute;
+  height: 100%;
+}
+
+.main__bg-decor-bottom {
+  left: 0;
+  transform: rotate(180deg);
+}
+
+.main__title {
+  text-align: center;
+  max-width: 43.75rem;
+}
+
+.main__title {
+  font-weight: 800;
+  color: #B9CBBB;
+}
+
+.main__title span {
+  color: #00E383;
+}
+
+.main__text {
+  font-weight: 400;
+  line-height: 30px;
+  color: #B9CBBB;
+  text-align: center;
+}
+
+.main__actions {
+  display: flex;
+  gap: 0.9375rem;
+}
+
+.main__action {
+  background-color: #383636;
+  display: inline-block;
+}
+
+.main__action {
+  font-weight: 700;
+  color: #B9CBBB;
+  padding: 1.0625rem 3.125rem;
+  border-radius: 0.625rem;
+  border: 1px solid #B9CBBB;
+  transition: all 0.3s ease 0s;
+}
+
+.main .action-green {
+  background-color: #00E383;
+  color: #121414;
+  border: 1px solid #00E383;
+}
+
 @font-face {
   font-family: Inter;
   font-display: swap;
@@ -543,6 +622,38 @@ body._lock {
   .footer__social-link {
     font-size: 1rem;
   }
+
+  .main {
+    padding-top: 12.5rem;
+  }
+
+  .main {
+    padding-bottom: 6.25rem;
+  }
+
+  .main__container {
+    gap: 3.125rem;
+  }
+
+  .main__bg-decor-bottom {
+    bottom: -6.25rem;
+  }
+
+  .main__title {
+    font-size: 4.0625rem;
+  }
+
+  .main__title {
+    line-height: 4.375rem;
+  }
+
+  .main__text {
+    font-size: 1.25rem;
+  }
+
+  .main__action {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 20em) {
@@ -567,6 +678,38 @@ body._lock {
   }
 
   .footer__social-link {
+    font-size: 0.75rem;
+  }
+
+  .main {
+    padding-top: 7.5rem;
+  }
+
+  .main {
+    padding-bottom: 5rem;
+  }
+
+  .main__container {
+    gap: 1.5625rem;
+  }
+
+  .main__bg-decor-bottom {
+    bottom: -5rem;
+  }
+
+  .main__title {
+    font-size: 1.75rem;
+  }
+
+  .main__title {
+    line-height: 2.5rem;
+  }
+
+  .main__text {
+    font-size: 0.875rem;
+  }
+
+  .main__action {
     font-size: 0.75rem;
   }
 }
@@ -671,6 +814,10 @@ body._lock {
 
   .touch [data-fp] {
     transition: height 0.2s;
+  }
+
+  .main__action {
+    padding: 1.0625rem 2.5rem;
   }
 }
 
@@ -778,6 +925,102 @@ body._lock {
       font-size: calc(0.75rem + 0.25 * (100vw - 20rem) / 57.5);
     }
 }
+
+@supports (padding-top: clamp( 7.5rem , 5.7608695652rem  +  8.6956521739vw , 12.5rem )) {
+    .main {
+      padding-top: clamp( 7.5rem , 5.7608695652rem  +  8.6956521739vw , 12.5rem );
+    }
+}
+
+@supports not (padding-top: clamp( 7.5rem , 5.7608695652rem  +  8.6956521739vw , 12.5rem )) {
+    .main {
+      padding-top: calc(7.5rem + 5 * (100vw - 20rem) / 57.5);
+    }
+}
+
+@supports (padding-bottom: clamp( 5rem , 4.5652173913rem  +  2.1739130435vw , 6.25rem )) {
+    .main {
+      padding-bottom: clamp( 5rem , 4.5652173913rem  +  2.1739130435vw , 6.25rem );
+    }
+}
+
+@supports not (padding-bottom: clamp( 5rem , 4.5652173913rem  +  2.1739130435vw , 6.25rem )) {
+    .main {
+      padding-bottom: calc(5rem + 1.25 * (100vw - 20rem) / 57.5);
+    }
+}
+
+@supports (gap: clamp( 1.5625rem , 1.0190217391rem  +  2.7173913043vw , 3.125rem )) {
+    .main__container {
+      gap: clamp( 1.5625rem , 1.0190217391rem  +  2.7173913043vw , 3.125rem );
+    }
+}
+
+@supports not (gap: clamp( 1.5625rem , 1.0190217391rem  +  2.7173913043vw , 3.125rem )) {
+    .main__container {
+      gap: calc(1.5625rem + 1.5625 * (100vw - 20rem) / 57.5);
+    }
+}
+
+@supports (bottom: clamp( -6.25rem , -4.5652173913rem  +  -2.1739130435vw , -5rem )) {
+    .main__bg-decor-bottom {
+      bottom: clamp( -6.25rem , -4.5652173913rem  +  -2.1739130435vw , -5rem );
+    }
+}
+
+@supports not (bottom: clamp( -6.25rem , -4.5652173913rem  +  -2.1739130435vw , -5rem )) {
+    .main__bg-decor-bottom {
+      bottom: calc(-5rem + -1.25 * (100vw - 20rem) / 57.5);
+    }
+}
+
+@supports (font-size: clamp( 1.75rem , 0.9456521739rem  +  4.0217391304vw , 4.0625rem )) {
+    .main__title {
+      font-size: clamp( 1.75rem , 0.9456521739rem  +  4.0217391304vw , 4.0625rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.75rem , 0.9456521739rem  +  4.0217391304vw , 4.0625rem )) {
+    .main__title {
+      font-size: calc(1.75rem + 2.3125 * (100vw - 20rem) / 57.5);
+    }
+}
+
+@supports (line-height: clamp( 2.5rem , 1.847826087rem  +  3.2608695652vw , 4.375rem )) {
+    .main__title {
+      line-height: clamp( 2.5rem , 1.847826087rem  +  3.2608695652vw , 4.375rem );
+    }
+}
+
+@supports not (line-height: clamp( 2.5rem , 1.847826087rem  +  3.2608695652vw , 4.375rem )) {
+    .main__title {
+      line-height: calc(2.5rem + 1.875 * (100vw - 20rem) / 57.5);
+    }
+}
+
+@supports (font-size: clamp( 0.875rem , 0.7445652174rem  +  0.652173913vw , 1.25rem )) {
+    .main__text {
+      font-size: clamp( 0.875rem , 0.7445652174rem  +  0.652173913vw , 1.25rem );
+    }
+}
+
+@supports not (font-size: clamp( 0.875rem , 0.7445652174rem  +  0.652173913vw , 1.25rem )) {
+    .main__text {
+      font-size: calc(0.875rem + 0.375 * (100vw - 20rem) / 57.5);
+    }
+}
+
+@supports (font-size: clamp( 0.75rem , 0.6630434783rem  +  0.4347826087vw , 1rem )) {
+    .main__action {
+      font-size: clamp( 0.75rem , 0.6630434783rem  +  0.4347826087vw , 1rem );
+    }
+}
+
+@supports not (font-size: clamp( 0.75rem , 0.6630434783rem  +  0.4347826087vw , 1rem )) {
+    .main__action {
+      font-size: calc(0.75rem + 0.25 * (100vw - 20rem) / 57.5);
+    }
+}
 }
 
 @media (max-width: 47.99875em) and (min-width: 77.5em) {
@@ -841,5 +1084,15 @@ body._lock {
 
   .fp-bullets .fp-bullet:hover {
     opacity: 1;
+  }
+
+  .main__action:hover {
+    border: 1px solid #00E383;
+    transform: translateY(-3px);
+  }
+
+  .main .action-green:hover {
+    box-shadow: 0 0 15px 5px #00E383;
+    transform: translateY(-3px);
   }
 }
