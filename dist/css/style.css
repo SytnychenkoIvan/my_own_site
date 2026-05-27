@@ -939,6 +939,7 @@ body._lock {
 .main__actions {
   display: flex;
   gap: 0.9375rem;
+  z-index: 1;
 }
 .main__action {
   background-color: #383636;

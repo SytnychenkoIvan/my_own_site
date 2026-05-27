@@ -16,7 +16,7 @@
 				height: 100%;
 				top: -120px;
 				right: 0;
-				z-index: -1;
+				// z-index: -1;
 		}
 		&__bg-decor-bottom{
 				content: "";
@@ -25,7 +25,7 @@
 				@include adaptiveValue("bottom", -100, -80);
 				left: 0;
 				transform: rotate(180deg);
-				z-index: -1;
+				// z-index: -1;
 		}
 		&__title {
 			text-align: center;
@@ -54,6 +54,7 @@
 		&__actions {
 			display: flex;
 			gap: rem(15);
+			z-index: 1;
 		}
 
 		// .main__action
