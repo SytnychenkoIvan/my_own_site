@@ -483,6 +483,7 @@ body._lock {
   height: 100%;
   top: -120px;
   right: 0;
+  z-index: -1;
 }
 
 .main__bg-decor-bottom {
@@ -494,6 +495,7 @@ body._lock {
 .main__bg-decor-bottom {
   left: 0;
   transform: rotate(180deg);
+  z-index: -1;
 }
 
 .main__title {
