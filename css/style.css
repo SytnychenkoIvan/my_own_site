@@ -483,7 +483,6 @@ body._lock {
   height: 100%;
   top: -120px;
   right: 0;
-  z-index: -1;
 }
 
 .main__bg-decor-bottom {
@@ -495,7 +494,6 @@ body._lock {
 .main__bg-decor-bottom {
   left: 0;
   transform: rotate(180deg);
-  z-index: -1;
 }
 
 .main__title {
@@ -522,6 +520,7 @@ body._lock {
 .main__actions {
   display: flex;
   gap: 0.9375rem;
+  z-index: 1;
 }
 
 .main__action {
