@@ -33,7 +33,7 @@
 			@include adaptiveValue("font-size", 65, 28);
 			@include adaptiveValue("line-height", 70, 40);
 			font-weight: 800;
-			color: $whiteColor;
+			color: $titleColor;
 			span{
 				color: $greenColor;
 			}
@@ -85,8 +85,93 @@
 			@media (any-hover: hover){
 				&:hover{
 					box-shadow: 0 0 15px 5px $greenColor;
-					// border: 1px solid $;
 					transform: translateY(-3px);
+				}
+			}
+		}
+}
+//========================================================================================================================================================
+.what {
+	@include adaptiveValue("padding-top", 100, 80);
+	@include adaptiveValue("padding-bottom", 100, 80);
+		background-color: $darckColor;
+		// .what__container
+
+		&__container {
+			padding: rem(0) rem(20);
+		}
+		&__header{
+			display: flex;
+			gap: rem(20);
+			align-items: center;
+			margin-bottom: rem(40);
+		}
+		// .what__title
+
+		&__title {
+			flex: 1 0 auto;
+			@include adaptiveValue("font-size", 50, 24);
+			font-weight: 700;
+			color: $titleColor;
+			position: relative;
+		}
+		&__line{
+			flex: 0 1 auto;
+			width: 100%;
+			height: rem(3);
+			background: linear-gradient(90deg,rgba(0, 227, 131, 1) 31%, rgba(0, 227, 131, 0.01) 100%);
+
+			
+		}
+
+		// .what__body
+
+		&__body {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: rem(50);
+		}
+		&__image{
+			flex: 0 1 auto;
+			max-width: rem(500);
+			border-radius: rem(20);
+			overflow: hidden;
+			box-shadow: 0 0 15px 2px #78c4a4;
+			img{
+				width: 100%;
+			}
+			@media (max-width:$mobile){
+				display: none;
+			}
+		}
+		// .what__list
+
+		&__list {
+			padding-left: rem(20);
+			flex: 0 0 auto;
+			color: $whiteColor;
+			@include adaptiveValue("font-size", 20, 14);
+			@include adaptiveValue("line-height", 40, 20);
+			@include adaptiveValue("row-gap",30 , 23);
+			font-weight: 500;
+			display: flex;
+			flex-direction: column;
+			@media (max-width:$mobile){
+				flex: 0 1 auto;
+			}
+			li{
+				position: relative;
+				&::before{
+					content: "";
+					position: absolute;
+					width: 7px;
+					height: 7px;
+					border-radius: 50%;
+					background-color: $greenColor;
+					top: 42%;
+					left: -20px;
+					box-shadow: 0 0 5px 2px #78c4a4;
 				}
 			}
 		}
