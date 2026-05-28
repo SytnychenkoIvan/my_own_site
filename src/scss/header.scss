@@ -80,7 +80,7 @@
 			color: $whiteColor;
 			font-weight: 700;
 			line-height: 25px;
-			transition: all 0.3s ease 0s;
+			// transition: all 0.3s ease 0s;
 			@include adaptiveValue("font-size",16 ,14 );
 			display: inline-block;
 			background: linear-gradient(to right, currentColor 0%, currentColor 100%) no-repeat;
