@@ -754,6 +754,10 @@ body._lock {
 }
 
 .stack__block {
+  font-family: "JetBrainsMono";
+}
+
+.stack__block {
   padding: 2.5rem 0.625rem;
   background-color: #161616;
   border-radius: 0.9375rem;
@@ -768,6 +772,101 @@ body._lock {
 
 .how__container {
   padding: 1.25rem;
+}
+
+.contacts {
+  background-color: #121414;
+}
+
+.contacts__container {
+  padding: 1.25rem;
+}
+
+.contacts__body {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.contacts__form {
+  border-radius: 1.25rem;
+  padding: 2.5rem;
+  flex: 0 1 60%;
+  background-color: #161616;
+}
+
+.contacts__socials {
+  border-radius: 1.25rem;
+  padding: 2.5rem;
+  flex: 0 1 40%;
+}
+
+.form-contacts {
+  border: 1px solid #524e4e;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-contacts__textarea {
+  flex: 1 1 auto;
+  resize: none;
+}
+
+.form-contacts__button {
+  display: inline-block;
+}
+
+.form-contacts__button {
+  font-weight: 700;
+  padding: 1.0625rem 3.125rem;
+  border-radius: 0.625rem;
+  transition: all 0.3s ease 0s;
+}
+
+.form-contacts__button {
+  max-width: 40%;
+  background-color: #00E383;
+  color: #121414;
+  border: 1px solid #00E383;
+}
+
+.form-style {
+  padding: 1.25rem;
+  border-radius: 0.9375rem;
+  background-color: #121414;
+  border: 1px solid #272525;
+}
+
+.social-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.social-contacts__item {
+  border-radius: 0.9375rem;
+  border: 1px solid #524e4e;
+  padding: 1.25rem;
+  background-color: #161616;
+  display: flex;
+  gap: 0.9375rem;
+  align-items: center;
+  transition: all 0.3s ease 0s;
+}
+
+.social-contacts__icon {
+  max-width: 1.5625rem;
+}
+
+.social-contacts__icon img {
+  width: 100%;
+}
+
+.social-contacts__link {
+  font-family: "JetBrainsMono";
+  color: #B9CBBB;
+  font-weight: 500;
+  font-size: 1.25rem;
 }
 
 @font-face {
@@ -962,6 +1061,18 @@ body._lock {
   .how {
     padding-bottom: 3.75rem;
   }
+
+  .contacts {
+    padding-top: 3.75rem;
+  }
+
+  .contacts {
+    padding-bottom: 3.75rem;
+  }
+
+  .form-contacts__button {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 20em) {
@@ -1100,6 +1211,18 @@ body._lock {
   .how {
     padding-bottom: 1.25rem;
   }
+
+  .contacts {
+    padding-top: 1.25rem;
+  }
+
+  .contacts {
+    padding-bottom: 1.25rem;
+  }
+
+  .form-contacts__button {
+    font-size: 0.75rem;
+  }
 }
 
 @media (max-width: 77.5em) {
@@ -1231,6 +1354,14 @@ body._lock {
 
   .stack__block {
     padding: 1.25rem 0.625rem;
+  }
+
+  .contacts__body {
+    flex-direction: column;
+  }
+
+  .form-contacts__button {
+    padding: 1.0625rem 2.5rem;
   }
 }
 
@@ -1679,6 +1810,42 @@ body._lock {
       padding-bottom: calc(1.25rem + 2.5 * (100vw - 20rem) / 57.5);
     }
 }
+
+@supports (padding-top: clamp( 1.25rem , 0.3804347826rem  +  4.347826087vw , 3.75rem )) {
+    .contacts {
+      padding-top: clamp( 1.25rem , 0.3804347826rem  +  4.347826087vw , 3.75rem );
+    }
+}
+
+@supports not (padding-top: clamp( 1.25rem , 0.3804347826rem  +  4.347826087vw , 3.75rem )) {
+    .contacts {
+      padding-top: calc(1.25rem + 2.5 * (100vw - 20rem) / 57.5);
+    }
+}
+
+@supports (padding-bottom: clamp( 1.25rem , 0.3804347826rem  +  4.347826087vw , 3.75rem )) {
+    .contacts {
+      padding-bottom: clamp( 1.25rem , 0.3804347826rem  +  4.347826087vw , 3.75rem );
+    }
+}
+
+@supports not (padding-bottom: clamp( 1.25rem , 0.3804347826rem  +  4.347826087vw , 3.75rem )) {
+    .contacts {
+      padding-bottom: calc(1.25rem + 2.5 * (100vw - 20rem) / 57.5);
+    }
+}
+
+@supports (font-size: clamp( 0.75rem , 0.6630434783rem  +  0.4347826087vw , 1rem )) {
+    .form-contacts__button {
+      font-size: clamp( 0.75rem , 0.6630434783rem  +  0.4347826087vw , 1rem );
+    }
+}
+
+@supports not (font-size: clamp( 0.75rem , 0.6630434783rem  +  0.4347826087vw , 1rem )) {
+    .form-contacts__button {
+      font-size: calc(0.75rem + 0.25 * (100vw - 20rem) / 57.5);
+    }
+}
 }
 
 @media (max-width: 47.99875em) and (min-width: 77.5em) {
@@ -1770,5 +1937,15 @@ body._lock {
     background-size: 100% 2px;
     /* Конечная ширина подчеркивания при наведении */
     color: #00E383;
+  }
+
+  .form-contacts__button:hover {
+    box-shadow: 0 0 15px 5px #00E383;
+    transform: translateY(-3px);
+  }
+
+  .social-contacts__item:hover {
+    box-shadow: 0 0 15px 5px #00E383;
+    transform: translateY(-3px);
   }
 }
