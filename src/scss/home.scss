@@ -447,16 +447,18 @@
 
 		&__form {
 			border-radius: rem(20);
-			padding: rem(40);
+			// padding: rem(40);
 			flex: 0 1 60%;
 			background-color: #161616;
+			@include adaptiveValue("padding", 40, 20);
 		}
 
 		// .contacts__socials
 
 		&__socials {
 			border-radius: rem(20);
-			padding: rem(40);
+			@include adaptiveValue("padding", 40, 20);
+			// padding: rem(40);
 			flex: 0 1 40%;
 			// background-color: #161616;
 		}
@@ -487,16 +489,20 @@
 
 		&__button {
 			display: inline-block;
-			// text-align: center;
+			text-align: center;
 			@include adaptiveValue("font-size", 16, 12);
 			font-weight: 700;
-			padding: rem(17) rem(50);
+			padding: rem(17) rem(00);
 			border-radius: rem(10);
 			transition: all 0.3s ease 0s;
-			@media (max-width:$mobile){
-				padding: rem(17) rem(40);
-			}
 			max-width: 40%;
+			@media (max-width:$mobile){
+				padding: rem(17) rem(00);
+			}
+			@media (max-width:$mobileSmall){
+				max-width: 100%;
+				
+			}
 			background-color: $greenColor;
 			color: $darckColor;
 			border: 1px solid $greenColor;
@@ -513,6 +519,8 @@
 	border-radius: rem(15);
 	background-color: $darckColor;
 	border: 1px solid #272525;
+	@include adaptiveValue("font-size", 20, 16);
+	color: $titleColor;
 }
 	// .form__button
 
@@ -559,6 +567,45 @@
 			font-family: "JetBrainsMono";
 			color: $whiteColor;
 			font-weight: 500;
-			font-size: rem(20);
+			@include adaptiveValue("font-size", 20, 16);
 		}
 }
+
+
+.button-menu {
+	z-index: 5;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+		position: fixed;
+		right: -200px;
+		bottom: 50px;
+		@include adaptiveValue("width", 120, 70);
+		@include adaptiveValue("height", 120, 70);
+		border-radius: 50%;
+		background-color: $greenColor;
+		background-color: $greenColor;
+		color: $darckColor;
+		border: 1px solid $greenColor;
+		transition: all 0.3s ease 0s;
+		@media (any-hover: hover){
+			&:hover{
+				box-shadow: 0 0 15px 5px $greenColor;
+				transform: translateY(-3px);
+			}
+		}
+		// .button-menu__text
+
+		&__text {
+			@include adaptiveValue("font-size", 16, 12);
+			// line-height: 15px;
+			font-weight: 700;
+			text-align: center;
+		}
+}
+.ring.show{
+				right: 50px;
+				@media (max-width:$mobile){
+					right: 20px; 
+				}
+			}

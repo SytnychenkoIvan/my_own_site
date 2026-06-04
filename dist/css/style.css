@@ -1754,13 +1754,57 @@ body._lock {
 }
 .contacts__form {
   border-radius: 1.25rem;
-  padding: 2.5rem;
   flex: 0 1 60%;
   background-color: #161616;
 }
+@media (min-width: 77.5em) {
+  .contacts__form {
+    padding: 2.5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 77.5em) {
+  @supports (padding: clamp( 1.25rem , 0.8152173913rem  +  2.1739130435vw , 2.5rem )) {
+    .contacts__form {
+      padding: clamp( 1.25rem , 0.8152173913rem  +  2.1739130435vw , 2.5rem );
+    }
+  }
+  @supports not (padding: clamp( 1.25rem , 0.8152173913rem  +  2.1739130435vw , 2.5rem )) {
+    .contacts__form {
+      padding: calc(1.25rem + 1.25 * (100vw - 20rem) / 57.5);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .contacts__form {
+    padding: 1.25rem;
+  }
+}
 .contacts__socials {
   border-radius: 1.25rem;
-  padding: 2.5rem;
+}
+@media (min-width: 77.5em) {
+  .contacts__socials {
+    padding: 2.5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 77.5em) {
+  @supports (padding: clamp( 1.25rem , 0.8152173913rem  +  2.1739130435vw , 2.5rem )) {
+    .contacts__socials {
+      padding: clamp( 1.25rem , 0.8152173913rem  +  2.1739130435vw , 2.5rem );
+    }
+  }
+  @supports not (padding: clamp( 1.25rem , 0.8152173913rem  +  2.1739130435vw , 2.5rem )) {
+    .contacts__socials {
+      padding: calc(1.25rem + 1.25 * (100vw - 20rem) / 57.5);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .contacts__socials {
+    padding: 1.25rem;
+  }
+}
+.contacts__socials {
   flex: 0 1 40%;
 }
 
@@ -1776,6 +1820,7 @@ body._lock {
 }
 .form-contacts__button {
   display: inline-block;
+  text-align: center;
 }
 @media (min-width: 77.5em) {
   .form-contacts__button {
@@ -1801,17 +1846,22 @@ body._lock {
 }
 .form-contacts__button {
   font-weight: 700;
-  padding: 1.0625rem 3.125rem;
+  padding: 1.0625rem 0rem;
   border-radius: 0.625rem;
   transition: all 0.3s ease 0s;
+  max-width: 40%;
 }
 @media (max-width: 47.99875em) {
   .form-contacts__button {
-    padding: 1.0625rem 2.5rem;
+    padding: 1.0625rem 0rem;
+  }
+}
+@media (max-width: 29.99875em) {
+  .form-contacts__button {
+    max-width: 100%;
   }
 }
 .form-contacts__button {
-  max-width: 40%;
   background-color: #00E383;
   color: #121414;
   border: 1px solid #00E383;
@@ -1828,6 +1878,31 @@ body._lock {
   border-radius: 0.9375rem;
   background-color: #121414;
   border: 1px solid #272525;
+}
+@media (min-width: 77.5em) {
+  .form-style {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 77.5em) {
+  @supports (font-size: clamp( 1rem , 0.9130434783rem  +  0.4347826087vw , 1.25rem )) {
+    .form-style {
+      font-size: clamp( 1rem , 0.9130434783rem  +  0.4347826087vw , 1.25rem );
+    }
+  }
+  @supports not (font-size: clamp( 1rem , 0.9130434783rem  +  0.4347826087vw , 1.25rem )) {
+    .form-style {
+      font-size: calc(1rem + 0.25 * (100vw - 20rem) / 57.5);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .form-style {
+    font-size: 1rem;
+  }
+}
+.form-style {
+  color: #E2E2E2;
 }
 
 .social-contacts {
@@ -1861,7 +1936,131 @@ body._lock {
   font-family: "JetBrainsMono";
   color: #B9CBBB;
   font-weight: 500;
-  font-size: 1.25rem;
+}
+@media (min-width: 77.5em) {
+  .social-contacts__link {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 77.5em) {
+  @supports (font-size: clamp( 1rem , 0.9130434783rem  +  0.4347826087vw , 1.25rem )) {
+    .social-contacts__link {
+      font-size: clamp( 1rem , 0.9130434783rem  +  0.4347826087vw , 1.25rem );
+    }
+  }
+  @supports not (font-size: clamp( 1rem , 0.9130434783rem  +  0.4347826087vw , 1.25rem )) {
+    .social-contacts__link {
+      font-size: calc(1rem + 0.25 * (100vw - 20rem) / 57.5);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .social-contacts__link {
+    font-size: 1rem;
+  }
+}
+
+.button-menu {
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  right: -200px;
+  bottom: 50px;
+}
+@media (min-width: 77.5em) {
+  .button-menu {
+    width: 7.5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 77.5em) {
+  @supports (width: clamp( 4.375rem , 3.2880434783rem  +  5.4347826087vw , 7.5rem )) {
+    .button-menu {
+      width: clamp( 4.375rem , 3.2880434783rem  +  5.4347826087vw , 7.5rem );
+    }
+  }
+  @supports not (width: clamp( 4.375rem , 3.2880434783rem  +  5.4347826087vw , 7.5rem )) {
+    .button-menu {
+      width: calc(4.375rem + 3.125 * (100vw - 20rem) / 57.5);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .button-menu {
+    width: 4.375rem;
+  }
+}
+@media (min-width: 77.5em) {
+  .button-menu {
+    height: 7.5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 77.5em) {
+  @supports (height: clamp( 4.375rem , 3.2880434783rem  +  5.4347826087vw , 7.5rem )) {
+    .button-menu {
+      height: clamp( 4.375rem , 3.2880434783rem  +  5.4347826087vw , 7.5rem );
+    }
+  }
+  @supports not (height: clamp( 4.375rem , 3.2880434783rem  +  5.4347826087vw , 7.5rem )) {
+    .button-menu {
+      height: calc(4.375rem + 3.125 * (100vw - 20rem) / 57.5);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .button-menu {
+    height: 4.375rem;
+  }
+}
+.button-menu {
+  border-radius: 50%;
+  background-color: #00E383;
+  background-color: #00E383;
+  color: #121414;
+  border: 1px solid #00E383;
+  transition: all 0.3s ease 0s;
+}
+@media (any-hover: hover) {
+  .button-menu:hover {
+    box-shadow: 0 0 15px 5px #00E383;
+    transform: translateY(-3px);
+  }
+}
+@media (min-width: 77.5em) {
+  .button-menu__text {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 77.5em) {
+  @supports (font-size: clamp( 0.75rem , 0.6630434783rem  +  0.4347826087vw , 1rem )) {
+    .button-menu__text {
+      font-size: clamp( 0.75rem , 0.6630434783rem  +  0.4347826087vw , 1rem );
+    }
+  }
+  @supports not (font-size: clamp( 0.75rem , 0.6630434783rem  +  0.4347826087vw , 1rem )) {
+    .button-menu__text {
+      font-size: calc(0.75rem + 0.25 * (100vw - 20rem) / 57.5);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .button-menu__text {
+    font-size: 0.75rem;
+  }
+}
+.button-menu__text {
+  font-weight: 700;
+  text-align: center;
+}
+
+.ring.show {
+  right: 50px;
+}
+@media (max-width: 47.99875em) {
+  .ring.show {
+    right: 20px;
+  }
 }
 
 @font-face {
