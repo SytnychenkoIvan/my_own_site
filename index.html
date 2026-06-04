@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/style.min.css?_v=20260530104127">
+	<link rel="stylesheet" href="css/style.min.css?_v=20260604143632">
 	<title>Positivus</title>
 </head>
 
@@ -16,10 +16,12 @@
 			<a href="" class="header__logo">Sytnychenko.IO</a>
 			<nav class="menu__body">
 				<ul class="menu__list">
-					<li class="menu__item"><a href="" class="menu__link">Головна</a></li>
-					<li class="menu__item"><a href="" class="menu__link">Про мене</a></li>
-					<li class="menu__item"><a href="" class="menu__link">Портфоліо</a></li>
-					<li class="menu__item"><a href="" class="menu__link">Контакти</a></li>
+					<li class="menu__item"><a data-goto=".main" href="" class="menu__link">Головна</a></li>
+					<li class="menu__item"><a data-goto-header data-goto=".what" href="" class="menu__link">Що я роблю</a></li>
+					<li class="menu__item"><a data-goto-header data-goto=".portfolio" href=""
+							class="menu__link">Мої роботи</a></li>
+					<li class="menu__item"><a data-goto-header data-goto=".contacts" href="" class="menu__link">Контакти</a>
+					</li>
 				</ul>
 			</nav>
 			<div class="header__actions actions">
@@ -181,12 +183,14 @@
 						<div class="contacts__line line"></div>
 					</div>
 					<div class="contacts__body">
-							<form id="contact-form" class="contacts__form form-contacts">
-								<input type="text" id="name" placeholder="Имя" required class="form-contacts__name form-style">
-								<input type="email" id="email" placeholder="Email" required class="form-contacts__email form-style">
-								<textarea id="message" placeholder="Сообщение" class="form-contacts__textarea form-style"></textarea>
-								<button type="submit" class="form-contacts__button">Отправить</button>
-							</form>
+						<form id="contact-form" class="contacts__form form-contacts">
+							<input type="text" id="name" placeholder="Имя" required class="form-contacts__name form-style">
+							<input type="email" id="email" placeholder="Email" required
+								class="form-contacts__email form-style">
+							<textarea id="message" placeholder="Сообщение"
+								class="form-contacts__textarea form-style"></textarea>
+							<button type="submit" class="form-contacts__button">Отправить</button>
+						</form>
 						<div class="contacts__socials social-contacts">
 							<a href="https://t.me/IvanSytnychenko" class="social-contacts__item" target="blank">
 								<div class="social-contacts__icon"><img src="img/icons/tel.svg" alt="Telegram"></div>
@@ -196,12 +200,14 @@
 								<div class="social-contacts__icon"><img src="img/icons/hub.svg" alt="GitHub"></div>
 								<p class="social-contacts__link">GitHub</p>
 							</a>
-							<a href="https://www.linkedin.com/in/ivan-sytnychenko-894461308/" class="social-contacts__item" target="blank">
+							<a href="https://www.linkedin.com/in/ivan-sytnychenko-894461308/" class="social-contacts__item"
+								target="blank">
 								<div class="social-contacts__icon"><img src="img/icons/in.svg" alt="Linkedin"></div>
 								<p class="social-contacts__link">Linkedin</p>
 							</a>
 							<a href="" class="social-contacts__item">
-								<div class="social-contacts__icon"><img src="img/icons/mail.svg" alt="Email" target="blank"></div>
+								<div class="social-contacts__icon"><img src="img/icons/mail.svg" alt="Email" target="blank">
+								</div>
 								<p class="social-contacts__link">Email</p>
 							</a>
 						</div>
@@ -209,6 +215,9 @@
 				</div>
 			</section>
 		</main>
+		<a href="https://t.me/IvanSytnychenko" class="button-menu ring" target="blank">
+			<div class="button-menu__text">Telegram</div>
+		</a>
 		<footer class="footer">
 	<div class="footer__container">
 		<a href="" class="footer__logo">Sytnychenko.IO</a>
@@ -225,7 +234,7 @@
 	</div>
 </footer>
 	</div>
-	<script src="js/app.min.js?_v=20260530104127"></script>
+	<script src="js/app.min.js?_v=20260604143632"></script>
 </body>
 
 </html>
