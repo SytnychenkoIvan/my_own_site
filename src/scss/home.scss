@@ -464,6 +464,9 @@
 		}
 }
 .form-contacts {
+	// &._form-focus {
+	// 	border: 1px solid $greenColor;
+	// }
 		border: 1px solid #524e4e;
 		display: flex;
 		flex-direction: column;
@@ -485,6 +488,18 @@
 		&__textarea {
 			flex: 1 1 auto;
 			resize: none;
+			overflow: auto;
+
+	/* Firefox */
+	scrollbar-width: none;
+
+	/* IE и старый Edge */
+	-ms-overflow-style: none;
+
+	/* Chrome, Safari, Opera */
+	&::-webkit-scrollbar {
+		display: none;
+	}
 		}
 
 		&__button {
@@ -513,15 +528,23 @@
 				}
 			}
 		}
+		
+		
 }
 .form-style{
-	padding: rem(20);
-	border-radius: rem(15);
-	background-color: $darckColor;
-	border: 1px solid #272525;
-	@include adaptiveValue("font-size", 20, 16);
-	color: $titleColor;
+	// position: relative;
+	// padding: rem(20);
+	// border-radius: rem(15);
+	// background-color: $darckColor ;
+	// border: 1px solid #272525;
+	// @include adaptiveValue("font-size", 20, 16);
+	&::placeholder {
+      // color: #999;
+      // font-size: 16px;
+      // opacity: 0.5;
+   }
 }
+
 	// .form__button
 
 
@@ -551,7 +574,7 @@
 				}
 			}
 		}
-
+		
 		// .social-contacts__icon
 
 		&__icon {

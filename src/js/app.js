@@ -82,7 +82,7 @@ import * as flsForms from "./files/forms/forms.js";
 
 flsForms.formFieldsInit({
 	viewPass: false,
-	autoHeight: false
+	autoHeight: true
 });
 
 /* Надсилання форми */

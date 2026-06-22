@@ -7,7 +7,11 @@
 	}
 	&__line {
 	}
-	&__input {
+	&__input._form-error {
+		box-shadow: 0 0 15px 0 red;
+	}
+	&__input._form-focus {
+		box-shadow: 0 0 15px 0 red;
 	}
 	&__button {
 	}
