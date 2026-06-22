@@ -322,41 +322,54 @@ body._lock {
 }
 
 .form {
-  max-width: 33.3125rem;
-  background-color: #fff;
-  border-radius: 10px;
-  display: flex;
-  padding: 0.375rem;
-  gap: 0.3125rem;
   position: relative;
 }
 
 .form__input {
-  height: 4rem;
-  flex: 1 1 auto;
-  padding: 0 1.25rem;
-  color: #263238;
-  font-weight: 500;
+  padding: 1.25rem;
+  border-radius: 0.9375rem;
+  background-color: #121414;
+  border: 1px solid #272525;
+}
+
+.form__input {
+  color: #E2E2E2;
+}
+
+.form__input:-webkit-autofill {
+  -webkit-text-fill-color: #E2E2E2;
+  box-shadow: 0 0 0 1000px #121414 inset;
+  caret-color: #E2E2E2;
+}
+
+.form__input:-webkit-autofill,
+.form__input:-webkit-autofill:hover,
+.form__input:-webkit-autofill:focus,
+.form__input:autofill {
+  -webkit-text-fill-color: #E2E2E2;
+  box-shadow: 0 0 0 1000px #121414 inset;
+  caret-color: #E2E2E2;
 }
 
 .form__input::-moz-placeholder {
-  color: #263238;
+  color: #999;
+  font-size: 16px;
+  opacity: 0.5;
 }
 
 .form__input::placeholder {
-  color: #263238;
+  color: #999;
+  font-size: 16px;
+  opacity: 0.5;
 }
 
 .form__input._form-error {
   color: red;
+  border: 1px solid red;
 }
 
-.form__input._form-error::-moz-placeholder {
-  color: red;
-}
-
-.form__input._form-error::placeholder {
-  color: red;
+.form__input._form-focus {
+  outline: 1px solid #00E383;
 }
 
 .form__error {
@@ -811,6 +824,16 @@ body._lock {
 .form-contacts__textarea {
   flex: 1 1 auto;
   resize: none;
+  overflow: auto;
+  /* Firefox */
+  scrollbar-width: none;
+  /* IE и старый Edge */
+  -ms-overflow-style: none;
+  /* Chrome, Safari, Opera */
+}
+
+.form-contacts__textarea::-webkit-scrollbar {
+  display: none;
 }
 
 .form-contacts__button {
@@ -830,17 +853,6 @@ body._lock {
   background-color: #00E383;
   color: #121414;
   border: 1px solid #00E383;
-}
-
-.form-style {
-  padding: 1.25rem;
-  border-radius: 0.9375rem;
-  background-color: #121414;
-  border: 1px solid #272525;
-}
-
-.form-style {
-  color: #E2E2E2;
 }
 
 .social-contacts {
@@ -999,6 +1011,10 @@ body._lock {
     row-gap: 1.875rem;
   }
 
+  .form__input {
+    font-size: 1.25rem;
+  }
+
   .main {
     padding-top: 12.5rem;
   }
@@ -1115,10 +1131,6 @@ body._lock {
     font-size: 1rem;
   }
 
-  .form-style {
-    font-size: 1.25rem;
-  }
-
   .social-contacts__link {
     font-size: 1.25rem;
   }
@@ -1175,6 +1187,10 @@ body._lock {
 
   .list {
     row-gap: 1.4375rem;
+  }
+
+  .form__input {
+    font-size: 1rem;
   }
 
   .main {
@@ -1291,10 +1307,6 @@ body._lock {
 
   .form-contacts__button {
     font-size: 0.75rem;
-  }
-
-  .form-style {
-    font-size: 1rem;
   }
 
   .social-contacts__link {
@@ -1493,12 +1505,6 @@ body._lock {
   }
 }
 
-@media (max-width: 26.875em) {
-  .form {
-    flex-direction: column;
-  }
-}
-
 @media (min-width: 20em) and (max-width: 77.5em) {
 @supports (font-size: clamp( 1.25rem , 1.0326086957rem  +  1.0869565217vw , 1.875rem )) {
     .header__logo {
@@ -1617,6 +1623,18 @@ body._lock {
 @supports not (row-gap: clamp( 1.4375rem , 1.285326087rem  +  0.7608695652vw , 1.875rem )) {
     .list {
       row-gap: calc(1.4375rem + 0.4375 * (100vw - 20rem) / 57.5);
+    }
+}
+
+@supports (font-size: clamp( 1rem , 0.9130434783rem  +  0.4347826087vw , 1.25rem )) {
+    .form__input {
+      font-size: clamp( 1rem , 0.9130434783rem  +  0.4347826087vw , 1.25rem );
+    }
+}
+
+@supports not (font-size: clamp( 1rem , 0.9130434783rem  +  0.4347826087vw , 1.25rem )) {
+    .form__input {
+      font-size: calc(1rem + 0.25 * (100vw - 20rem) / 57.5);
     }
 }
 
@@ -1965,18 +1983,6 @@ body._lock {
 @supports not (font-size: clamp( 0.75rem , 0.6630434783rem  +  0.4347826087vw , 1rem )) {
     .form-contacts__button {
       font-size: calc(0.75rem + 0.25 * (100vw - 20rem) / 57.5);
-    }
-}
-
-@supports (font-size: clamp( 1rem , 0.9130434783rem  +  0.4347826087vw , 1.25rem )) {
-    .form-style {
-      font-size: clamp( 1rem , 0.9130434783rem  +  0.4347826087vw , 1.25rem );
-    }
-}
-
-@supports not (font-size: clamp( 1rem , 0.9130434783rem  +  0.4347826087vw , 1.25rem )) {
-    .form-style {
-      font-size: calc(1rem + 0.25 * (100vw - 20rem) / 57.5);
     }
 }
 
