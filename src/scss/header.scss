@@ -1,5 +1,5 @@
 .header {
-		background-color: $blackColor;
+		background-color: var(--blackColor);
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -25,7 +25,7 @@
 		&__logo {
 			font-family: "JetBrainsMono";
 			font-weight: 700;
-			color: $greenColor;
+			color: var(--greenColor);
 			@include adaptiveValue("font-size", 30, 20);
 			z-index: 5;
 		}
@@ -47,7 +47,7 @@
 				width: 100%;
 				top: 0;
 				right: -100%;
-				background-color: $darckColor;
+				background-color: var(--darckColor);
 				padding-top:rem(120) ;
 				transition: all 0.3s ease 0s;
 				.menu-open &{
@@ -77,7 +77,7 @@
 		// .menu__link
 
 		&__link {
-			color: $whiteColor;
+			color: var(--whiteColor);
 			font-weight: 700;
 			line-height: 25px;
 			// transition: all 0.3s ease 0s;
@@ -90,7 +90,7 @@
 			@media (any-hover: hover) {
 			&:hover {
 				background-size: 100% 2px; /* Конечная ширина подчеркивания при наведении */
-				color: $greenColor;
+				color: var(--greenColor);
 			}
 		}
 			@media (max-width:$mobile){
@@ -123,6 +123,31 @@
 }
 .icon-menu {
 }
+
+
+.icon-light {
+   display: none;
+}
+
+body.whitestyle .icon-dark {
+   display: none;
+}
+
+body.whitestyle .icon-light {
+   display: block;
+}
+
+//Вращение иконки========================================================================================================================================================
+
+.themes__icon {
+   transition: transform .5s ease;
+}
+
+.themes__icon.rotate {
+   transform: rotate(360deg);
+}
+
+
 
 // .menu {
 // 	padding: 0 rem(10);
@@ -260,7 +285,7 @@
 			position: absolute;
 			width: 100%;
 			height: rem(2);
-			background-color: #f0e8e8;
+			background-color: var(--titleColor);
 		}
 		&::before {
 			top: 0;

@@ -1,14 +1,16 @@
 .main {
 	@include adaptiveValue("padding-top", 200, 120);
 	@include adaptiveValue("padding-bottom", 100, 40);
-		background-color: $darckColor;
-		// .main__title
-		&__container{
+	background-color: var(--darckColor);
+	// .main__title
+	&__container{
+			// background-color: var(--containerColor);
 			display: flex;
 			align-items: center;
 			flex-direction: column;
 			@include adaptiveValue("gap", 50, 25);
 			position: relative;
+			// padding: rem(0) rem(20);
 		}
 		&__bg-decor{
 				content: "";
@@ -33,9 +35,10 @@
 			@include adaptiveValue("font-size", 65, 28);
 			@include adaptiveValue("line-height", 70, 40);
 			font-weight: 800;
-			color: $titleColor;
+			color: var(--titleColor);
 			span{
-				color: $greenColor;
+				// color: $greenColor;
+				color: var(--greenColor);
 			}
 		}
 
@@ -45,7 +48,7 @@
 			@include adaptiveValue("font-size", 20, 14);
 			font-weight: 400;
 			line-height: 30px;
-			color: $whiteColor;
+			color: var(--whiteColor);
 			text-align: center;
 		}
 
@@ -74,18 +77,18 @@
 			}
 			@media (any-hover: hover){
 				&:hover{
-					border: 1px solid $greenColor;
+					border: 1px solid var(--greenColor);
 					transform: translateY(-3px);
 				}
 			}
 		}
 		.action-green{
-			background-color: $greenColor;
+			background-color: var(--greenColor);
 			color: $darckColor;
-			border: 1px solid $greenColor;
+			border: 1px solid var(--greenColor);
 			@media (any-hover: hover){
 				&:hover{
-					box-shadow: 0 0 15px 5px $greenColor;
+					box-shadow: 0 0 15px 5px var(--greenColor);
 					transform: translateY(-3px);
 				}
 			}
@@ -95,10 +98,11 @@
 .what {
 	@include adaptiveValue("padding-top", 60, 40);
 	@include adaptiveValue("padding-bottom", 60, 40);
-		background-color: $darckColor;
-		// .what__container
-
-		&__container {
+	background-color: var(--darckColor);
+	// .what__container
+	
+	&__container {
+			// background-color: var(--containerColor);
 			padding: rem(0) rem(20);
 		}
 		&__header{
@@ -130,10 +134,11 @@
 .portfolio {
 		@include adaptiveValue("padding-top", 60, 20);
 		@include adaptiveValue("padding-bottom", 60, 20);
-		background-color: $darckColor;
+		background-color: var(--darckColor);
 		// .portfolio__container
 
 		&__container {
+			// background-color: var(--containerColor);
 			padding: rem(20);
 		}
 
@@ -214,7 +219,7 @@
 
 		&__body {
 			padding: rem(20);
-			background-color: #161616;
+			background-color: var(--itemBody);
 			// gap: rem(20);
 			@include adaptiveValue("gap", 25, 15);
 			display: flex;
@@ -305,12 +310,12 @@
 .stack {
 		@include adaptiveValue("padding-top", 60, 20);
 		@include adaptiveValue("padding-bottom", 60, 20);
-		background-color: $darckColor;
+		background-color: var(--darckColor);
 		// .stack__container
 
 		&__container {
 			padding: rem(60) rem(20);
-			background-color: #0C0F0F;
+			background-color: var(--blackColor);
 			border-radius: rem(20);
 		}
 
@@ -369,7 +374,7 @@
 .how {
 		@include adaptiveValue("padding-top", 60, 20);
 		@include adaptiveValue("padding-bottom", 60, 20);
-		background-color: $darckColor;
+		background-color: var(--darckColor);
 		// .how__container
 
 		&__container {
@@ -411,7 +416,7 @@
 .contacts {
 		@include adaptiveValue("padding-top", 60, 20);
 		@include adaptiveValue("padding-bottom", 60, 20);
-		background-color: $darckColor;
+		background-color: var(--darckColor);
 		// .contacts__container
 
 		&__container {

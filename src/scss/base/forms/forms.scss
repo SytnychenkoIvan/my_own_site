@@ -22,7 +22,7 @@
 		// flex: 1 1 auto;
 		padding: rem(20);
 		border-radius: rem(15);
-		background-color: $darckColor ;
+		background-color: var(--darckColor) ;
 		border: 1px solid #272525;
 		@include adaptiveValue("font-size", 20, 16);
 		// background-color: $darckColor;

@@ -23,7 +23,7 @@
 	flex: 1 0 auto;
 			@include adaptiveValue("font-size", 50, 24);
 			font-weight: 700;
-			color: $titleColor;
+			color: var(--titleColor);
 			position: relative;
 }
 .line{
@@ -55,7 +55,7 @@
 .list{
 	padding-left: rem(20);
 	flex: 0 0 auto;
-	color: $whiteColor;
+	color: var(--whiteColor);
 	@include adaptiveValue("font-size", 20, 14);
 	@include adaptiveValue("line-height", 40, 20);
 	@include adaptiveValue("row-gap",30 , 23);

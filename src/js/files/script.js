@@ -91,3 +91,47 @@ const showButton = () => {
 	})
 }
 showButton()
+
+//Перемикання світлої та темної теми========================================================================================================================================================
+
+
+let styleMode = localStorage.getItem('styleMode');
+const styleToggle = document.querySelector('.themes__icon');
+
+const enableWhiteStyle = () => {
+	document.body.classList.add('whitestyle');
+	localStorage.setItem('styleMode', 'white')
+}
+
+const disableWhiteStyle = () => {
+	document.body.classList.remove('whitestyle');
+	localStorage.setItem('styleMode', null)
+}
+
+// styleToggle.addEventListener('click', () => {
+// 	styleMode = localStorage.getItem('styleMode');
+// 	if (styleMode !== 'white') {
+// 		enableWhiteStyle();
+// 	} else {
+// 		disableWhiteStyle();
+// 	}
+// });
+
+if (styleMode === 'white') {
+	enableWhiteStyle();
+}
+
+styleToggle.addEventListener('click', () => {
+	styleToggle.classList.add('rotate');
+
+	if (localStorage.getItem('styleMode') !== 'white') {
+		enableWhiteStyle();
+	} else {
+		disableWhiteStyle();
+	}
+
+	styleToggle.addEventListener('transitionend', function handler() {
+		styleToggle.classList.remove('rotate');
+		styleToggle.removeEventListener('transitionend', handler);
+	});
+});
