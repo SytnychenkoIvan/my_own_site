@@ -108,6 +108,8 @@ const disableWhiteStyle = () => {
 	localStorage.setItem('styleMode', null)
 }
 
+// Без вращения иконок===================================================================================================
+
 // styleToggle.addEventListener('click', () => {
 // 	styleMode = localStorage.getItem('styleMode');
 // 	if (styleMode !== 'white') {
@@ -116,10 +118,13 @@ const disableWhiteStyle = () => {
 // 		disableWhiteStyle();
 // 	}
 // });
+//========================================================================================================================================================
 
 if (styleMode === 'white') {
 	enableWhiteStyle();
 }
+
+//---С вращением иконок======================================================================================================
 
 styleToggle.addEventListener('click', () => {
 	styleToggle.classList.add('rotate');
@@ -135,3 +140,5 @@ styleToggle.addEventListener('click', () => {
 		styleToggle.removeEventListener('transitionend', handler);
 	});
 });
+
+//========================================================================================================================================================
