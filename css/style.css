@@ -687,23 +687,48 @@ body.whitestyle .icon-light {
 }
 
 .portfolio__items {
+  display: grid;
   gap: 1.25rem;
-  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease;
+}
+
+.portfolio__more {
+  margin: 1.875rem auto 0;
+  display: block;
+  font-family: "JetBrainsMono";
+  color: #00E383;
+  background: transparent;
+  border: 1px solid #00E383;
+  border-radius: 0.625rem;
+  padding: 0.625rem 1.25rem;
+  cursor: pointer;
+}
+
+.portfolio__more span:last-child {
+  display: none;
+}
+
+.portfolio__more.is-active span:first-child {
+  display: none;
+}
+
+.portfolio__more.is-active span:last-child {
+  display: inline;
 }
 
 .item-portfolio {
   display: flex;
   flex-direction: column;
-  flex: 0 1 400px;
-}
-
-.item-portfolio {
   border-radius: 0.9375rem;
   border: 1px solid #636262;
   overflow: hidden;
 }
 
 .item-portfolio__image {
+  flex: 0 1 50%;
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -763,7 +788,6 @@ body.whitestyle .icon-light {
 }
 
 .item-portfolio__text {
-  flex: 1 1 auto;
   line-height: 20px;
   color: #B9CBBB;
 }
@@ -1100,27 +1124,23 @@ body.whitestyle .icon-light {
   }
 
   .portfolio {
-    padding-top: 3.75rem;
+    padding-top: 1.875rem;
   }
 
   .portfolio {
-    padding-bottom: 3.75rem;
-  }
-
-  .portfolio__header {
-    margin-bottom: 6.25rem;
+    padding-bottom: 1.875rem;
   }
 
   .item-portfolio__body {
-    gap: 1.5625rem;
+    gap: 1.25rem;
   }
 
   .item-portfolio__stack {
-    font-size: 0.75rem;
+    font-size: 0.625rem;
   }
 
   .item-portfolio__title {
-    font-size: 1.875rem;
+    font-size: 1.5625rem;
   }
 
   .item-portfolio__text {
@@ -1136,7 +1156,7 @@ body.whitestyle .icon-light {
   }
 
   .stack__header {
-    margin-bottom: 6.25rem;
+    margin-bottom: 3.75rem;
   }
 
   .stack__blocks {
@@ -1189,6 +1209,12 @@ body.whitestyle .icon-light {
 
   .button-menu__text {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .portfolio__items {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1285,16 +1311,12 @@ body.whitestyle .icon-light {
     padding-bottom: 1.25rem;
   }
 
-  .portfolio__header {
-    margin-bottom: 3.125rem;
-  }
-
   .item-portfolio__body {
     gap: 0.9375rem;
   }
 
   .item-portfolio__stack {
-    font-size: 0.625rem;
+    font-size: 0.5rem;
   }
 
   .item-portfolio__title {
@@ -1482,14 +1504,6 @@ body.whitestyle .icon-light {
 
   .main__action {
     padding: 1.0625rem 2.5rem;
-  }
-
-  .portfolio__items {
-    flex-wrap: wrap;
-  }
-
-  .item-portfolio {
-    flex: 0 1 100%;
   }
 
   .stack__blocks {
@@ -1802,75 +1816,63 @@ body.whitestyle .icon-light {
     }
 }
 
-@supports (padding-top: clamp( 1.25rem , 0.3804347826rem  +  4.347826087vw , 3.75rem )) {
+@supports (padding-top: clamp( 1.25rem , 1.0326086957rem  +  1.0869565217vw , 1.875rem )) {
     .portfolio {
-      padding-top: clamp( 1.25rem , 0.3804347826rem  +  4.347826087vw , 3.75rem );
+      padding-top: clamp( 1.25rem , 1.0326086957rem  +  1.0869565217vw , 1.875rem );
     }
 }
 
-@supports not (padding-top: clamp( 1.25rem , 0.3804347826rem  +  4.347826087vw , 3.75rem )) {
+@supports not (padding-top: clamp( 1.25rem , 1.0326086957rem  +  1.0869565217vw , 1.875rem )) {
     .portfolio {
-      padding-top: calc(1.25rem + 2.5 * (100vw - 20rem) / 57.5);
+      padding-top: calc(1.25rem + 0.625 * (100vw - 20rem) / 57.5);
     }
 }
 
-@supports (padding-bottom: clamp( 1.25rem , 0.3804347826rem  +  4.347826087vw , 3.75rem )) {
+@supports (padding-bottom: clamp( 1.25rem , 1.0326086957rem  +  1.0869565217vw , 1.875rem )) {
     .portfolio {
-      padding-bottom: clamp( 1.25rem , 0.3804347826rem  +  4.347826087vw , 3.75rem );
+      padding-bottom: clamp( 1.25rem , 1.0326086957rem  +  1.0869565217vw , 1.875rem );
     }
 }
 
-@supports not (padding-bottom: clamp( 1.25rem , 0.3804347826rem  +  4.347826087vw , 3.75rem )) {
+@supports not (padding-bottom: clamp( 1.25rem , 1.0326086957rem  +  1.0869565217vw , 1.875rem )) {
     .portfolio {
-      padding-bottom: calc(1.25rem + 2.5 * (100vw - 20rem) / 57.5);
+      padding-bottom: calc(1.25rem + 0.625 * (100vw - 20rem) / 57.5);
     }
 }
 
-@supports (margin-bottom: clamp( 3.125rem , 2.0380434783rem  +  5.4347826087vw , 6.25rem )) {
-    .portfolio__header {
-      margin-bottom: clamp( 3.125rem , 2.0380434783rem  +  5.4347826087vw , 6.25rem );
-    }
-}
-
-@supports not (margin-bottom: clamp( 3.125rem , 2.0380434783rem  +  5.4347826087vw , 6.25rem )) {
-    .portfolio__header {
-      margin-bottom: calc(3.125rem + 3.125 * (100vw - 20rem) / 57.5);
-    }
-}
-
-@supports (gap: clamp( 0.9375rem , 0.7201086957rem  +  1.0869565217vw , 1.5625rem )) {
+@supports (gap: clamp( 0.9375rem , 0.8288043478rem  +  0.5434782609vw , 1.25rem )) {
     .item-portfolio__body {
-      gap: clamp( 0.9375rem , 0.7201086957rem  +  1.0869565217vw , 1.5625rem );
+      gap: clamp( 0.9375rem , 0.8288043478rem  +  0.5434782609vw , 1.25rem );
     }
 }
 
-@supports not (gap: clamp( 0.9375rem , 0.7201086957rem  +  1.0869565217vw , 1.5625rem )) {
+@supports not (gap: clamp( 0.9375rem , 0.8288043478rem  +  0.5434782609vw , 1.25rem )) {
     .item-portfolio__body {
-      gap: calc(0.9375rem + 0.625 * (100vw - 20rem) / 57.5);
+      gap: calc(0.9375rem + 0.3125 * (100vw - 20rem) / 57.5);
     }
 }
 
-@supports (font-size: clamp( 0.625rem , 0.5815217391rem  +  0.2173913043vw , 0.75rem )) {
+@supports (font-size: clamp( 0.5rem , 0.4565217391rem  +  0.2173913043vw , 0.625rem )) {
     .item-portfolio__stack {
-      font-size: clamp( 0.625rem , 0.5815217391rem  +  0.2173913043vw , 0.75rem );
+      font-size: clamp( 0.5rem , 0.4565217391rem  +  0.2173913043vw , 0.625rem );
     }
 }
 
-@supports not (font-size: clamp( 0.625rem , 0.5815217391rem  +  0.2173913043vw , 0.75rem )) {
+@supports not (font-size: clamp( 0.5rem , 0.4565217391rem  +  0.2173913043vw , 0.625rem )) {
     .item-portfolio__stack {
-      font-size: calc(0.625rem + 0.125 * (100vw - 20rem) / 57.5);
+      font-size: calc(0.5rem + 0.125 * (100vw - 20rem) / 57.5);
     }
 }
 
-@supports (font-size: clamp( 1.25rem , 1.0326086957rem  +  1.0869565217vw , 1.875rem )) {
+@supports (font-size: clamp( 1.25rem , 1.1413043478rem  +  0.5434782609vw , 1.5625rem )) {
     .item-portfolio__title {
-      font-size: clamp( 1.25rem , 1.0326086957rem  +  1.0869565217vw , 1.875rem );
+      font-size: clamp( 1.25rem , 1.1413043478rem  +  0.5434782609vw , 1.5625rem );
     }
 }
 
-@supports not (font-size: clamp( 1.25rem , 1.0326086957rem  +  1.0869565217vw , 1.875rem )) {
+@supports not (font-size: clamp( 1.25rem , 1.1413043478rem  +  0.5434782609vw , 1.5625rem )) {
     .item-portfolio__title {
-      font-size: calc(1.25rem + 0.625 * (100vw - 20rem) / 57.5);
+      font-size: calc(1.25rem + 0.3125 * (100vw - 20rem) / 57.5);
     }
 }
 
@@ -1910,15 +1912,15 @@ body.whitestyle .icon-light {
     }
 }
 
-@supports (margin-bottom: clamp( 3.125rem , 2.0380434783rem  +  5.4347826087vw , 6.25rem )) {
+@supports (margin-bottom: clamp( 3.125rem , 2.9076086957rem  +  1.0869565217vw , 3.75rem )) {
     .stack__header {
-      margin-bottom: clamp( 3.125rem , 2.0380434783rem  +  5.4347826087vw , 6.25rem );
+      margin-bottom: clamp( 3.125rem , 2.9076086957rem  +  1.0869565217vw , 3.75rem );
     }
 }
 
-@supports not (margin-bottom: clamp( 3.125rem , 2.0380434783rem  +  5.4347826087vw , 6.25rem )) {
+@supports not (margin-bottom: clamp( 3.125rem , 2.9076086957rem  +  1.0869565217vw , 3.75rem )) {
     .stack__header {
-      margin-bottom: calc(3.125rem + 3.125 * (100vw - 20rem) / 57.5);
+      margin-bottom: calc(3.125rem + 0.625 * (100vw - 20rem) / 57.5);
     }
 }
 
