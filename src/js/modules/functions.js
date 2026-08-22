@@ -502,3 +502,57 @@ export function uniqArray(array) {
 // export function menuClose() {
 // 	document.documentElement.classList.remove("menu-open");
 // }
+export function portfolioShowMore() {
+	window.addEventListener('load', () => {
+
+		const block = document.querySelector('.portfolio__container');
+		if (!block) return;
+
+		const items = block.querySelector('.portfolio__items');
+		const button = block.querySelector('.portfolio__more');
+
+		if (!items || !button) return;
+
+		function getFirstRowHeight() {
+
+			const children = [...items.children];
+
+			if (!children.length) return 0;
+
+			const columns = getComputedStyle(items)
+				.gridTemplateColumns
+				.split(' ')
+				.filter(Boolean).length;
+
+			const firstRow = children.slice(0, columns);
+
+			const rowHeight = Math.max(
+				...firstRow.map(item => item.offsetHeight)
+			);
+
+			return rowHeight;
+		}
+
+		function update() {
+
+			if (block.classList.contains('is-open')) {
+				items.style.maxHeight = `${items.scrollHeight}px`;
+			} else {
+				items.style.maxHeight = `${getFirstRowHeight()}px`;
+			}
+		}
+
+		button.addEventListener('click', () => {
+
+			block.classList.toggle('is-open');
+			button.classList.toggle('is-active');
+
+			update();
+		});
+
+		update();
+
+		window.addEventListener('resize', update);
+	});
+}
+portfolioShowMore();
