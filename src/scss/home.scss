@@ -1,5 +1,5 @@
 .main {
-	@include adaptiveValue("padding-top", 200, 120);
+	@include adaptiveValue("padding-top", 180, 120);
 	@include adaptiveValue("padding-bottom", 100, 40);
 	background-color: var(--darckColor);
 	// .main__title
